@@ -1,0 +1,123 @@
+@charset "UTF-8";
+/* variables */
+/* mixins */
+.main {
+  position: relative;
+  height: 100%; }
+
+.test {
+  padding-top: 100px; }
+  .test .namedgroup {
+    display: block; }
+    .test .namedgroup .name {
+      display: block;
+      width: 100%;
+      font-size: 20px;
+      padding: 10px;
+      border: 3px solid #8282ea;
+      border-radius: 10px;
+      position: relative; }
+  .test .nameOut {
+    padding: 20px 0;
+    display: block;
+    font-size: 25px;
+    font-style: italic;
+    position: relative; }
+    .test .nameOut:before {
+      content: 'Ваш номер заказа:';
+      position: absolute;
+      top: 5px;
+      font-size: 14px; }
+  .test .select-block {
+    position: relative;
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%; }
+  .test .typeEngine {
+    font-size: 20px;
+    display: block;
+    width: 100%;
+    position: relative; }
+    .test .typeEngine option {
+      display: block;
+      width: 100%; }
+  .test .engineOut {
+    padding: 10px 0 20px;
+    margin-bottom: 20px;
+    display: block;
+    font-size: 25px;
+    font-style: italic;
+    position: relative; }
+    .test .engineOut:before {
+      content: 'Ваш тип двигателя:';
+      position: absolute;
+      top: -5px;
+      font-size: 14px; }
+  .test .color-group {
+    padding-bottom: 10px;
+    background-color: #ddd;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    padding-left: 10px; }
+    .test .color-group label {
+      display: inline-block;
+      height: 20px;
+      width: 60px;
+      padding-left: 10px; }
+    .test .color-group .blue {
+      color: blue;
+      text-transform: uppercase;
+      position: relative;
+      top: 6px;
+      font-style: italic;
+      font-size: 24px; }
+    .test .color-group .red {
+      color: red;
+      text-transform: uppercase;
+      position: relative;
+      top: 6px;
+      font-style: italic;
+      font-size: 24px; }
+    .test .color-group .yellow {
+      color: yellow;
+      text-transform: uppercase;
+      position: relative;
+      top: 6px;
+      font-style: italic;
+      font-size: 24px; }
+  .test .collorInner {
+    font-size: 24px;
+    font-style: italic;
+    padding-bottom: 20px;
+    padding-top: 25px;
+    position: relative; }
+    .test .collorInner:before {
+      content: 'Выбраный вами цвет под номером:';
+      position: absolute;
+      top: 5px;
+      font-size: 14px; }
+  .test .check {
+    font-size: 24px;
+    font-style: italic; }
+    .test .check label {
+      position: relative;
+      top: 4px;
+      padding-left: 10px; }
+
+.info {
+  display: block;
+  width: 100%; }
+  .info h1 {
+    font-size: 50px;
+    margin-bottom: -5px; }
+  .info ul {
+    list-style-type: none;
+    display: block;
+    width: 100%; }
+  .info li {
+    font-size: 35px;
+    font-style: italic;
+    border-bottom: 1px solid black;
+    display: block;
+    width: 100%; }

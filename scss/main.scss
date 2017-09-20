@@ -1,0 +1,150 @@
+@import '_variables.scss';
+
+body {
+}
+.main {
+	position: relative;
+	height: 100%;
+}
+
+.test {
+	padding-top: 100px;
+	.namedgroup {
+		display: block;
+		.name {
+			display: block;
+			width: 100%;
+			font-size: 20px;
+			padding: 10px;
+			border: 3px solid #8282ea;
+			border-radius: 10px;
+			position: relative;
+		}
+	}
+	.nameOut {
+		padding: 20px 0;
+		display: block;
+		font-size: 25px;
+		font-style: italic;
+		position: relative;
+		&:before {
+			content:'Ваш номер заказа:';
+			position: absolute;
+			top: 5px;
+			font-size: 14px;
+		}
+	}
+	.select-block {
+		position: relative;
+		display: block;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		width: 100%;
+	}
+	.typeEngine {
+		font-size: 20px;
+		display: block;
+		width: 100%;
+		position: relative;
+		option {
+			display: block;
+			width: 100%;
+		}
+	}
+	.engineOut {
+		padding: 10px 0 20px;
+		margin-bottom: 20px;
+		display: block;
+		font-size: 25px;
+		font-style: italic;
+		position: relative;
+		&:before {
+			content:'Ваш тип двигателя:';
+			position: absolute;
+			top: -5px;
+			font-size: 14px;
+		}
+	}
+
+	.color-group {
+		padding-bottom: 10px;
+		background-color: #ddd;
+		margin-bottom: 10px;
+		border-radius: 20px;
+		padding-left: 10px;
+		label {
+			display: inline-block;
+			height: 20px;
+			width: 60px;
+			padding-left: 10px;
+		}
+		.blue {
+			color: blue;
+			text-transform: uppercase;
+			position: relative;
+			top: 6px;
+			font-style: italic;
+			font-size: 24px;
+		}
+		.red {
+			color: red;
+			text-transform: uppercase;
+			position: relative;
+			top: 6px;
+			font-style: italic;
+			font-size: 24px;
+		}
+		.yellow {
+			color: yellow;
+			text-transform: uppercase;
+			position: relative;
+			top: 6px;
+			font-style: italic;
+			font-size: 24px;
+		}
+	}
+	.collorInner {
+		font-size: 24px;
+		font-style: italic;
+		padding-bottom: 20px;
+		padding-top: 25px;
+		position: relative;
+		&:before {
+			content:'Выбраный вами цвет под номером:';
+			position: absolute;
+			top: 5px;
+			font-size: 14px;
+		}
+	}
+	.check {
+		font-size: 24px;
+		font-style: italic;
+		label {
+			position: relative;
+			top: 4px;
+			padding-left: 10px;
+		}
+	}
+}
+.info {
+	display: block;
+	width: 100%;
+	h1 {
+		font-size: 50px;
+		margin-bottom: -5px;
+	}
+	ul {
+		list-style-type: none;
+		display: block;
+		width: 100%;
+	}
+	li {
+		font-size: 35px;
+		font-style: italic;
+		border-bottom: 1px solid black;
+		display: block;
+		width: 100%;
+	}
+}
+
+
