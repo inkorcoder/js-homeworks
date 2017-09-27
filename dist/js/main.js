@@ -83,84 +83,84 @@ $(document).ready(function() {
 
 
 
-	function carInfo(name, caption, siblings, parent, isPrimary ){
-		this.name = name;
-		this.caption = caption;
-		this.siblings = siblings;
-		this.parent = parent;
-		this.isPrimary = isPrimary;
+	// function carInfo(name, caption, siblings, parent, isPrimary ){
+	// 	this.name = name;
+	// 	this.caption = caption;
+	// 	this.siblings = siblings;
+	// 	this.parent = parent;
+	// 	this.isPrimary = isPrimary;
 
-		this.getParent = function(arg){
-			if (this.name == arg.parent) {
-				console.log('Прямой Родитель')
-			}
-			else if (this.parent == arg.parent){
-				console.log('не прямой родитель но общий производитель ' + this.parent)
-			}
-			else {
-				console.log('Не родитель');
-			}
-		}
-		this.getSiblings = function(sib){
+	// 	this.getParent = function(arg){
+	// 		if (this.name == arg.parent) {
+	// 			console.log('Прямой Родитель')
+	// 		}
+	// 		else if (this.parent == arg.parent){
+	// 			console.log('не прямой родитель но общий производитель ' + this.parent)
+	// 		}
+	// 		else {
+	// 			console.log('Не родитель');
+	// 		}
+	// 	}
+	// 	this.getSiblings = function(sib){
 
-			for (var i = 0; i < sib.siblings.length; i++) {
-			  if (sib.siblings[i] === name) {
-			  	console.log( name + ' = ' +  sib.name + ' соседи');
-			  	return false
-			  }
-			}
+	// 		for (var i = 0; i < sib.siblings.length; i++) {
+	// 		  if (sib.siblings[i] === name) {
+	// 		  	console.log( name + ' = ' +  sib.name + ' соседи');
+	// 		  	return false
+	// 		  }
+	// 		}
 
-			console.log( name + ' = ' +  sib.name + ' не соседи')
-		}
-	}
+	// 		console.log( name + ' = ' +  sib.name + ' не соседи')
+	// 	}
+	// }
 
-	// parent
-	var Camry = new carInfo('Camry', 'CamryEdition was one of a long car in toyota',
-	 ['Corolla' ,'Supra'], 'toyota', true);
+	// // parent
+	// var Camry = new carInfo('Camry', 'CamryEdition was one of a long car in toyota',
+	//  ['Corolla' ,'Supra'], 'toyota', true);
 
-	// parent
-	var Supra = new carInfo('Supra', 'Supra one of a fastest car in the world',
-	 ['Camry', 'Corolla'], 'toyota', true);
-		// child
-		var Celica = new carInfo('Celica', 'Celica is a child of toyota Supra', 
-			['Celsior'],'Supra', false);
-		var Celsior = new carInfo('Celsior', 'Celsior is a child of toyota Supra', 
-			['Celica'],'Supra', false);
+	// // parent
+	// var Supra = new carInfo('Supra', 'Supra one of a fastest car in the world',
+	//  ['Camry', 'Corolla'], 'toyota', true);
+	// 	// child
+	// 	var Celica = new carInfo('Celica', 'Celica is a child of toyota Supra', 
+	// 		['Celsior'],'Supra', false);
+	// 	var Celsior = new carInfo('Celsior', 'Celsior is a child of toyota Supra', 
+	// 		['Celica'],'Supra', false);
 
-	// parent
-	var Corolla = new carInfo('Corolla', 'Corolla is a bisness class',
-	 ['Camry', 'Supra'], 'toyota', true);
-		//child
-		var Starlet = new carInfo('Starlet', 'Starlet is a my car', 
-		[], 'Corolla', false);
-
-
-	// family
-		Supra.getParent(Camry);
-
-	// siblings
-		Supra.getSiblings(Camry);
-
-	// Проверяем какая марка к какой оноситься
-		console.log(Supra instanceof carInfo);
+	// // parent
+	// var Corolla = new carInfo('Corolla', 'Corolla is a bisness class',
+	//  ['Camry', 'Supra'], 'toyota', true);
+	// 	//child
+	// 	var Starlet = new carInfo('Starlet', 'Starlet is a my car', 
+	// 	[], 'Corolla', false);
 
 
-	// parent
-	var Tribeca = new carInfo('Tribeca', 'TribecaEdition was one of a long car in subaru',
-	 ['Forester' ,'Impreza'], 'subaru', true);
+	// // family
+	// 	Supra.getParent(Camry);
 
-	// parent
-	var Impreza = new carInfo('Impreza', 'Impreza one of a fastest car in the world',
-	 ['Tribeca', 'Forester'], 'subaru', true);
-		// child
-		var Wrx = new carInfo('Wrx', 'Wrx is a child of subaru Impreza', 
-			['Celsior'],'Impreza', false);
-		var STI = new carInfo('STI', 'STI is a child of subaru Impreza', 
-			['Wrx'],'Impreza', false);
+	// // siblings
+	// 	Supra.getSiblings(Camry);
 
-	// parent
-	var Forester = new carInfo('Forester', 'Forester is a bisness class',
-	 ['Tribeca', 'Impreza'], 'subaru', true);
+	// // Проверяем какая марка к какой оноситься
+	// 	console.log(Supra instanceof carInfo);
+
+
+	// // parent
+	// var Tribeca = new carInfo('Tribeca', 'TribecaEdition was one of a long car in subaru',
+	//  ['Forester' ,'Impreza'], 'subaru', true);
+
+	// // parent
+	// var Impreza = new carInfo('Impreza', 'Impreza one of a fastest car in the world',
+	//  ['Tribeca', 'Forester'], 'subaru', true);
+	// 	// child
+	// 	var Wrx = new carInfo('Wrx', 'Wrx is a child of subaru Impreza', 
+	// 		['Celsior'],'Impreza', false);
+	// 	var STI = new carInfo('STI', 'STI is a child of subaru Impreza', 
+	// 		['Wrx'],'Impreza', false);
+
+	// // parent
+	// var Forester = new carInfo('Forester', 'Forester is a bisness class',
+	//  ['Tribeca', 'Impreza'], 'subaru', true);
 
 
 
@@ -189,11 +189,17 @@ $(document).ready(function() {
 // forester
 
 
-
-
-
-
-
+function fibonacci(n) {
+  var f = 1;  var b = 1;
+  var i = 3;
+  for (var i = 3; i <= n; i++) {
+    var c = f + b;
+    f = b;
+    b = c;
+  }
+  return b;
+}
+console.log(fibonacci(10));
 
 
 
