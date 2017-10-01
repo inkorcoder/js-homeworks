@@ -1,5 +1,5 @@
 
-$(document).ready(function() {
+// $(document).ready(function() {
 
 
 	// task 1
@@ -188,20 +188,175 @@ $(document).ready(function() {
 
 // forester
 
+// homework3
 
-function fibonacci(n) {
-  var f = 1;  var b = 1;
-  var i = 3;
-  for (var i = 3; i <= n; i++) {
-    var c = f + b;
-    f = b;
-    b = c;
-  }
-  return b;
+function $(node, context) {
+	// выборка будет представлять из себя массив выбраных нод
+	var collection = [];
+	// если ничего не прошло, то вохвращаем пустой массив
+	if (!node){
+		return collection;
+	}
+	// если селектор приходит строкой
+	if (typeof node === 'string'){
+		// если приходит контекст, ищем елемент в нем
+		if (context){
+			collection = [].slice.call($(context)[0].querySelectorAll(node));
+		// если нет - то ищем по документу
+		} else {
+			collection = [].slice.call(document.querySelectorAll(node));
+		}
+	// если в селектор попадает единичный элемент
+	// nodeType может быть одним из:
+	// 1 элемент
+	// 3 текст
+	// 8 комментарий
+	// 9 document
+	// и их еще много на самом деле
+	} else if (node.nodeType && (node.nodeType === 1 || node.nodeType === 9)){
+		collection = [node];
+	// если в селектор попадает NodeList
+	} else if (typeof node === 'object'){
+		collection = [].slice.call(node);
+	}
+	// пробегаемся по массиву с событиями
+	events.map(function(eventName){
+		// записываем метод на массив по имени события (напрмиер collection['click'])
+		collection[eventName] = function(callback) {
+			// для каждой ноды в выборке
+			collection.map(function(node, index){
+				// навешиваем обработчик события
+				node.addEventListener(eventName, function(e){
+					// и замыкаем на нем this путем вызова call в ее контексте
+					callback.call(node, e);
+				}, false);
+			});
+		}
+	});
+	// то же самое делаем для событий на document
+	if (collection[0] === document){
+		documentEvents.map(function(eventObj){
+			collection[eventObj.ev] = function(callback) {
+				collection.keydown(function(e){
+					if (callback && e.keyCode === eventObj.key){
+						callback.call(node, e);
+					}
+				});
+			}
+		});
+	}
+	// устанавливаем метод trigger
+	collection.trigger = function(eventName){
+		// для каждой ноды в выборке
+		collection.map(function(node){
+			// если на документе есть свойство 'createEvent'
+			// то это новый браузер и на него можно навесить через
+			// 'addEventListener'
+			if (document.createEvent) {
+				event = new Event(eventName);
+				node.dispatchEvent(event);
+			// если нет - то от старый и используем старый подход
+			} else {
+				event = document.createEventObject();
+				node.fireEvent('on'+eventName, event);
+			}
+		});
+	};
+	// всегда возвращаем выборку
+	return collection;
 }
-console.log(fibonacci(10));
+
+
+console.log($('#main'));
 
 
 
+
+// function fibonacci(n) {
+//   var f = 1;  var b = 1;
+//   var i = 3;
+//   for (var i = 3; i <= n; i++) {
+//     var c = f + b;
+//     f = b;
+//     b = c;
+//   }
+//   return b;
+// }
+// console.log(fibonacci(10));
+
+
+// homework4
+
+
+	var shortStr = `<head>
+				<title>My Title</title>
+				<link rel="stylesheet" href="css/_bundle.min.css">
+			</head>
+			<body>
+				<main>
+					<div class="container" id="container">
+						<div class="row">
+							<div class="col-xs-6">
+								<a href="someurl.com" class="link-href" data-call="#popup">
+									<figure>
+										<img src="" alt="some image">
+										<figcaption>
+											Caption <br> here!
+										</figcaption>
+									</figure>
+								</a>
+							</div>
+							<div class="col-xs-6">
+								<a href="someurl.com" class="link-href" data-call="#popup">
+									<figure>
+										<img src="" alt="some image">
+										<figcaption>
+											Caption <br> here!
+										</figcaption>
+									</figure>
+								</a>
+							</div>
+						</div>
+					</div>
+				</main>
+			</body>
+			`;
+
+
+
+
+	var tagsReg = /(\bhead\b|\btitle\b|\blink\b(?!-)|body|main|div|\ba\b|a(?=>)|\bimg\b|\bul\b|\bol\b|\bfigure\b|\bfigcaption\b|\bbr\b)/gm;
+	var chevronReg =	/[(<)(/>)]/gm;
+	var classReg = /\bsrc\b\=|\brel\b\=|\balt\b\=|\bhref\b\=|data-[a-z]*\=/gi;
+	var inClas = /"(.*?)"/gim;
+	var nReg = /<br>/gim;
+	var tabReg = /\t/gim;
+	var spaceReg = /\s/gim;
+
+	var shortStr11 = shortStr.replace(nReg, '&crarr;');
+	var shortStr12 = shortStr11.replace(tabReg, '&mdash;');
+	var shortStr13 = shortStr12.replace(spaceReg, '&middot;');
+	var shortStr1 = shortStr13.replace(chevronReg, '<span class="white bracket-open">$&</span>');
+	var shortStr2 = shortStr1.replace(tagsReg, '<span class="red">$&</span>');
+	var shortStr3 = shortStr2.replace(classReg, '<span class="aqua">$&</span>');
+
+	// console.log(shortStr3);
+
+	document.getElementById('out').innerHTML = shortStr3;
 	
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	// });

@@ -110,6 +110,22 @@ img.adaptive {
     -ms-transform: translateY(-50%);
     transform: translateY(-50%); }
 
+.out {
+  background: black;
+  color: #E6D761; }
+
+.red {
+  color: #F22643; }
+
+.white {
+  color: #fff; }
+
+.aqua {
+  color: #A1E22C; }
+
+.color {
+  color: blue; }
+
 /* media queries */
 /* variables */
 /* mixins */
