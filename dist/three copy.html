@@ -12,18 +12,28 @@
 	<link rel="stylesheet" href="css/_bundle.min.css">
 
 </head>
-<body>
-	<main id="main">
-
+<body id="home">
+	<main>
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">
-				<div class="out" id="out"></div>
+				<h3>mousedown, mouseup, click</h3>
+				<button class="btn" id="mousedown">button<span>(mousedown)</span></button>
+				<button class="btn" id="mouseup">button<span>(mouseup)</span></button>
+				<button class="btn" id="click">button<span>(click)</span></button>
+
+				<h3>focus, blur</h3>
+				<input type="text" id="focusBlur">
+
+				<h3>change</h3>
+				<select id="change">
+					<option value="opt1">option 1</option>
+					<option value="opt2">option 2</option>
+					<option value="opt3">option 3</option>
+				</select>
 			</div>
 		</div>
-	</div>	
-
-
+	</div>
 	</main>
 	<!-- #=include includes/footer.html -->-->
 	<script src="js/bundle/bundle.js"></script>

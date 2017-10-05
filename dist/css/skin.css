@@ -7,6 +7,28 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
+.input::-webkit-input-placeholder {
+  color: #9ab5c5;
+  -webkit-transition: inherit;
+  transition: inherit; }
+
+.input:-moz-placeholder {
+  /* Firefox 18- */
+  color: #9ab5c5;
+  -webkit-transition: inherit;
+  transition: inherit; }
+
+.input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #9ab5c5;
+  -webkit-transition: inherit;
+  transition: inherit; }
+
+.input:-ms-input-placeholder {
+  color: #9ab5c5;
+  -webkit-transition: inherit;
+  transition: inherit; }
+
 /* variables */
 /* variables */
 /* mixins */
@@ -261,5 +283,112 @@ img.adaptive {
     margin-right: 0;
     right: auto;
     left: 0; } }
+
+.high-menu {
+  background: #fff;
+  background: #000;
+  /*background: #87C8FF;*/
+  padding: 20px;
+  color: #fff; }
+
+.head-menu {
+  padding-bottom: 20px; }
+
+.form-block {
+  padding-bottom: 10px;
+  padding-top: 10px; }
+  .form-block label {
+    display: inline-block;
+    width: 200px;
+    font-size: 15px;
+    color: #fff;
+    font-weight: 700; }
+    .form-block label i {
+      padding-left: 5px; }
+  .form-block .input {
+    border: 1px solid #9ab5c5;
+    /*background: black;*/
+    color: #618861;
+    /*color: blue;*/
+    font-size: 16px;
+    font-weight: 700;
+    width: 300px;
+    padding: 10px; }
+
+.console {
+  display: none; }
+
+.weatherImage {
+  width: 100px;
+  position: absolute;
+  left: -9999px; }
+
+#map {
+  margin-left: -20px;
+  margin-right: -20px; }
+
+.weather-results {
+  list-style: none;
+  height: 80px;
+  overflow-y: auto; }
+  .weather-results li {
+    padding: 5px 20px;
+    display: inline-block;
+    width: 25%;
+    font-size: 16px; }
+    .weather-results li span {
+      display: inline-block;
+      padding: 5px; }
+      .weather-results li span b {
+        padding-right: 10px; }
+
+#warnings_panel {
+  position: absolute;
+  left: -9999px; }
+
+.date-block .date-wrapper {
+  padding-bottom: 10px;
+  padding-top: 10px; }
+
+.date-block #date {
+  font-size: 18px;
+  font-style: italic;
+  display: block; }
+
+.date-block #type {
+  font-size: 18px;
+  display: block;
+  font-style: italic; }
+
+.temperature-main {
+  text-align: center; }
+  .temperature-main .head-temp {
+    font-size: 20px; }
+  .temperature-main .temp {
+    display: inline-block;
+    font-size: 60px; }
+  .temperature-main .smal-grad {
+    font-size: 24px; }
+
+.more-info ul {
+  display: table;
+  width: 100%; }
+
+.more-info li {
+  display: table-cell;
+  padding-top: 30px;
+  width: 33.3%;
+  text-align: center; }
+  .more-info li .info {
+    font-size: 12px;
+    display: inline-block; }
+  .more-info li #wind {
+    display: inline-block;
+    vertical-align: bottom; }
+  .more-info li .caption {
+    display: inline-block;
+    font-size: 12px; }
+  .more-info li .result {
+    font-size: 30px; }
 
 /* ------------- */

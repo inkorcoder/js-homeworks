@@ -28,6 +28,9 @@
 	outline: none !important;
 	box-sizing: border-box;
 }
+.input {
+	@include placeholder(#9ab5c5);
+}
 
 /* variables */
 @import '_variables.scss';
@@ -159,4 +162,6 @@ img.adaptive {
 /* media queries */
 @import 'main.scss';
 @import 'media/skin-media.scss';
+@import 'ipgeo.scss';
+@import 'ipmain.scss';
 /* ------------- */
