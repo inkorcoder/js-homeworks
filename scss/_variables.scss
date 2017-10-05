@@ -1,0 +1,21 @@
+/* variables */
+
+$font: 'Open Sans', sans-serif;
+$font2: 'Lora', sans-serif;
+
+
+/* mixins */
+@mixin placeholder($color){
+	&::-webkit-input-placeholder {
+		color: #{$color};
+	}
+	&:-moz-placeholder {
+		color: #{$color};
+	}
+	&::-moz-placeholder {
+		color: #{$color};
+	}
+	&:-ms-input-placeholder {
+		color: #{$color};
+	}
+}

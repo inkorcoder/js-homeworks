@@ -1,0 +1,394 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i");
+* {
+  padding: 0;
+  margin: 0;
+  outline: none !important;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.input::-webkit-input-placeholder {
+  color: #9ab5c5;
+  -webkit-transition: inherit;
+  transition: inherit; }
+
+.input:-moz-placeholder {
+  /* Firefox 18- */
+  color: #9ab5c5;
+  -webkit-transition: inherit;
+  transition: inherit; }
+
+.input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #9ab5c5;
+  -webkit-transition: inherit;
+  transition: inherit; }
+
+.input:-ms-input-placeholder {
+  color: #9ab5c5;
+  -webkit-transition: inherit;
+  transition: inherit; }
+
+/* variables */
+/* variables */
+/* mixins */
+/* ------------- */
+html, body {
+  width: 100%;
+  height: 100%;
+  font-size: 14px; }
+  html.overlayed, body.overlayed {
+    overflow: hidden; }
+  html.opac, body.opac {
+    opacity: 0.9; }
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400; }
+
+main {
+  min-height: 100%;
+  width: 100%;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%; }
+
+a {
+  -webkit-transition: .3s;
+  transition: .3s;
+  border-bottom: 1px solid transparent;
+  color: black; }
+  a.white {
+    color: #fff; }
+  a:hover {
+    text-decoration: none;
+    -webkit-transition: .3s;
+    transition: .3s;
+    color: grey; }
+  a:focus {
+    text-decoration: none; }
+
+img.adaptive {
+  display: block;
+  width: 100%;
+  height: auto; }
+
+.clear {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+.right-align {
+  text-align: right; }
+
+.verticaly-middle {
+  display: table;
+  width: 100%;
+  height: 100%; }
+  .verticaly-middle .inner {
+    display: table-cell;
+    vertical-align: middle; }
+
+.image-contain {
+  position: relative;
+  padding-top: 100%;
+  overflow: hidden;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0); }
+  .image-contain img {
+    position: absolute;
+    width: auto;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    max-width: 80%;
+    max-height: 80%; }
+
+.image-cover {
+  position: relative;
+  padding-top: 100%;
+  overflow: hidden;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0); }
+  .image-cover img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: auto;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%); }
+  .image-cover.vertical img {
+    top: 50%;
+    left: 0;
+    height: auto;
+    width: 100%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%); }
+
+.out {
+  background: black;
+  color: #E6D761; }
+
+.red {
+  color: #F22643; }
+
+.white {
+  color: #fff; }
+
+.aqua {
+  color: #A1E22C; }
+
+.color {
+  color: blue; }
+
+/* media queries */
+/* variables */
+/* mixins */
+.main {
+  position: relative;
+  height: 100%; }
+
+.test {
+  padding-top: 100px; }
+  .test .namedgroup {
+    display: block; }
+    .test .namedgroup .name {
+      display: block;
+      width: 100%;
+      font-size: 20px;
+      padding: 10px;
+      border: 3px solid #8282ea;
+      border-radius: 10px;
+      position: relative; }
+  .test .nameOut {
+    padding: 20px 0;
+    display: block;
+    font-size: 25px;
+    font-style: italic;
+    position: relative; }
+    .test .nameOut:before {
+      content: 'Ваш номер заказа:';
+      position: absolute;
+      top: 5px;
+      font-size: 14px; }
+  .test .select-block {
+    position: relative;
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%; }
+  .test .typeEngine {
+    font-size: 20px;
+    display: block;
+    width: 100%;
+    position: relative; }
+    .test .typeEngine option {
+      display: block;
+      width: 100%; }
+  .test .engineOut {
+    padding: 10px 0 20px;
+    margin-bottom: 20px;
+    display: block;
+    font-size: 25px;
+    font-style: italic;
+    position: relative; }
+    .test .engineOut:before {
+      content: 'Ваш тип двигателя:';
+      position: absolute;
+      top: -5px;
+      font-size: 14px; }
+  .test .color-group {
+    padding-bottom: 10px;
+    background-color: #ddd;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    padding-left: 10px; }
+    .test .color-group label {
+      display: inline-block;
+      height: 20px;
+      width: 60px;
+      padding-left: 10px; }
+    .test .color-group .blue {
+      color: blue;
+      text-transform: uppercase;
+      position: relative;
+      top: 6px;
+      font-style: italic;
+      font-size: 24px; }
+    .test .color-group .red {
+      color: red;
+      text-transform: uppercase;
+      position: relative;
+      top: 6px;
+      font-style: italic;
+      font-size: 24px; }
+    .test .color-group .yellow {
+      color: yellow;
+      text-transform: uppercase;
+      position: relative;
+      top: 6px;
+      font-style: italic;
+      font-size: 24px; }
+  .test .collorInner {
+    font-size: 24px;
+    font-style: italic;
+    padding-bottom: 20px;
+    padding-top: 25px;
+    position: relative; }
+    .test .collorInner:before {
+      content: 'Выбраный вами цвет под номером:';
+      position: absolute;
+      top: 5px;
+      font-size: 14px; }
+  .test .check {
+    font-size: 24px;
+    font-style: italic; }
+    .test .check label {
+      position: relative;
+      top: 4px;
+      padding-left: 10px; }
+
+.info {
+  display: block;
+  width: 100%; }
+  .info h1 {
+    font-size: 50px;
+    margin-bottom: -5px; }
+  .info ul {
+    list-style-type: none;
+    display: block;
+    width: 100%; }
+  .info li {
+    font-size: 35px;
+    font-style: italic;
+    border-bottom: 1px solid black;
+    display: block;
+    width: 100%; }
+
+/* variables */
+/* mixins */
+@media (max-width: 1200px) {
+  .slider-wrapper .owl-controls .owl-buttons .owl-next {
+    margin-left: 0;
+    right: 0;
+    left: auto; }
+  .slider-wrapper .owl-controls .owl-buttons .owl-prev {
+    margin-right: 0;
+    right: auto;
+    left: 0; } }
+
+.high-menu {
+  background: #fff;
+  background: #000;
+  /*background: #87C8FF;*/
+  padding: 20px;
+  color: #fff; }
+
+.head-menu {
+  padding-bottom: 20px; }
+
+.form-block {
+  padding-bottom: 10px;
+  padding-top: 10px; }
+  .form-block label {
+    display: inline-block;
+    width: 200px;
+    font-size: 15px;
+    color: #fff;
+    font-weight: 700; }
+    .form-block label i {
+      padding-left: 5px; }
+  .form-block .input {
+    border: 1px solid #9ab5c5;
+    /*background: black;*/
+    color: #618861;
+    /*color: blue;*/
+    font-size: 16px;
+    font-weight: 700;
+    width: 300px;
+    padding: 10px; }
+
+.console {
+  display: none; }
+
+.weatherImage {
+  width: 100px;
+  position: absolute;
+  left: -9999px; }
+
+#map {
+  margin-left: -20px;
+  margin-right: -20px; }
+
+.weather-results {
+  list-style: none;
+  height: 80px;
+  overflow-y: auto; }
+  .weather-results li {
+    padding: 5px 20px;
+    display: inline-block;
+    width: 25%;
+    font-size: 16px; }
+    .weather-results li span {
+      display: inline-block;
+      padding: 5px; }
+      .weather-results li span b {
+        padding-right: 10px; }
+
+#warnings_panel {
+  position: absolute;
+  left: -9999px; }
+
+.date-block .date-wrapper {
+  padding-bottom: 10px;
+  padding-top: 10px; }
+
+.date-block #date {
+  font-size: 18px;
+  font-style: italic;
+  display: block; }
+
+.date-block #type {
+  font-size: 18px;
+  display: block;
+  font-style: italic; }
+
+.temperature-main {
+  text-align: center; }
+  .temperature-main .head-temp {
+    font-size: 20px; }
+  .temperature-main .temp {
+    display: inline-block;
+    font-size: 60px; }
+  .temperature-main .smal-grad {
+    font-size: 24px; }
+
+.more-info ul {
+  display: table;
+  width: 100%; }
+
+.more-info li {
+  display: table-cell;
+  padding-top: 30px;
+  width: 33.3%;
+  text-align: center; }
+  .more-info li .info {
+    font-size: 12px;
+    display: inline-block; }
+  .more-info li #wind {
+    display: inline-block;
+    vertical-align: bottom; }
+  .more-info li .caption {
+    display: inline-block;
+    font-size: 12px; }
+  .more-info li .result {
+    font-size: 30px; }
+
+/* ------------- */
