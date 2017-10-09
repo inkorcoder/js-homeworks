@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<title>Главная | AJAX, Сокеты,
+LocalStorage,
+Веб-воркеры,
+Сервис-воркеры, API</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<meta name="format-detection" content="telephone=no">
+
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="css/_bundle.min.css">
+
+</head>
+<body id="home">
+	<main>	
+
+		<div class="high-menu" id="info">
+			<div>
+			<div class="container-fluid">
+				<div class="head-menu">
+					<div class="row">
+						<div class="col-xs-5">
+								<div class="form-block">
+									<label for="from">От куда: <i class="fa fa-arrow-right"></i></label>
+									<input type="search" id="from" class="input" placeholder="Введите адрес отправления" onchange="calcRoute()" value="">
+								</div>
+								<div class="form-block">
+									<label for="to">Пункт назначения:<i class="fa fa-arrow-right"></i></label>
+									<input type="search" id="to" class="input" placeholder="Введите адрес прибытия" onchange="calcRoute()" value="">
+								</div>
+						</div>
+						<div class="col-xs-2">
+							<div class="date-block">
+								<div class="date-wrapper">
+									<div class="head-data">Сегодняшняя дата:</div>
+									<div id="date"><span class="date-info">--</span></div>
+								</div>
+								<div class="type-wrapper">
+									<div class="head-data">Тип погоды:</div>
+									<div id="type"><span class="type-info">--</span></div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-2">
+							<div class="temperature-main">
+								<div class="head-temp">
+									Температура:
+								</div>
+								<span id="temperature" class="temp">--</span>
+								<sup class="smal-grad">°C</sup>
+							</div>
+						</div>
+						<div class="col-xs-3">
+							<div class="more-info">
+								<ul class="clear">
+									<li>
+										<div class="info">Влажность:</div>
+										<div class="result" id="humidity" > 
+											--%
+										</div>
+									</li>
+									<li>
+										<div class="info">Облачность:</div>
+										<div class="result" id="cloudly" > 
+											--%
+										</div>
+									</li>
+									<li>
+										<div class="info">Ветер:</div>
+										<div class="result" id="wind">--
+										</div>
+										<sup class="caption">м/с</sup>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+				<div id="map" style="height: 700px"></div>
+				<div id="directionsPanel" style="float:right;width:30%;height: 100%"></div>
+				<div id="warnings_panel" style="float:right;width:30%;height: 100%"></div>
+				</div>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-12">
+						<ul class="weather-results" id="weatherResults"></ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+
+	</main>
+	<!-- #=include includes/footer.html -->
+	<script src="js/bundle/bundle.js"></script>
+	<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsTEzowOQ7c4Ad2zobFrcKW57hWPhlOHE&callback=initMap"></script> -->
+	<script async defer
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAg-2vKrJh6xYm-W1lIOZJczCzbNazuOw4&callback=initMaped">
+	</script>
+
+
+</body>
+</html>
